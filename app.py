@@ -78,8 +78,8 @@ st.markdown("""
 def load_and_preprocess():
     df = pd.read_csv("milknew.csv")
     df.columns = df.columns.str.strip()          # hapus spasi nama kolom
-    df.drop_duplicates(inplace=True)
     df.dropna(inplace=True)
+    # Duplikat DIPERTAHANKAN — setiap baris adalah catatan validasi kualitas susu yang sah
 
     le = LabelEncoder()
     df["Grade_enc"] = le.fit_transform(df["Grade"])  # high=0, low=1, medium=2
