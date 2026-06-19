@@ -105,8 +105,7 @@ def train_models(X_mm, y, X_train, X_test, y_train, y_test):
     sil = silhouette_score(X_mm, cluster_labels)
 
     # ── Logistic Regression ───────────────────────────────────
-    lr = LogisticRegression(C=1.0, solver="lbfgs", max_iter=1000,
-                             multi_class="auto", random_state=42)
+    lr = LogisticRegression(C=1.0, solver="lbfgs", max_iter=1000, random_state=42)
     lr.fit(X_train, y_train)
     y_pred_lr = lr.predict(X_test)
     acc_lr = accuracy_score(y_test, y_pred_lr)
