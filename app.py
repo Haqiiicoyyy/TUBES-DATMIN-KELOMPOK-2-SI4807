@@ -555,7 +555,7 @@ elif page == "🔮 Prediksi Baru":
             </div>""", unsafe_allow_html=True)
             fig, ax = plt.subplots(figsize=(5, 2.5))
             cls_names = le.classes_
-            ax.barh(cls_names, prob_lr, color=["#2ecc71","#e74c3c","#f39c12"], edgecolor="white")
+            ax.barh(cls_names, prob_lr, color=["#2ecc71","#e74c3c","#f39c12"], edgecolor="black")
             ax.set_xlim(0, 1); ax.set_xlabel("Probabilitas")
             ax.set_title("Probabilitas per Kelas — LR", fontweight="bold")
             for i, v in enumerate(prob_lr):
@@ -571,7 +571,7 @@ elif page == "🔮 Prediksi Baru":
                 <h2>{grade_emoji.get(grade_nb,'')} Grade: <b>{grade_nb.upper()}</b></h2>
             </div>""", unsafe_allow_html=True)
             fig, ax = plt.subplots(figsize=(5, 2.5))
-            ax.barh(cls_names, prob_nb, color=["#2ecc71","#e74c3c","#f39c12"], edgecolor="white")
+            ax.barh(cls_names, prob_nb, color=["#2ecc71","#e74c3c","#f39c12"], edgecolor="black")
             ax.set_xlim(0, 1); ax.set_xlabel("Probabilitas")
             ax.set_title("Probabilitas per Kelas — NB", fontweight="bold")
             for i, v in enumerate(prob_nb):
